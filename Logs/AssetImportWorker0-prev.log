@@ -1,0 +1,247 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.17f1 (a4537701e4ab) revision 10769271'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22000.376; Version 2009; 64bit' Language: 'en' Physical Memory: 16233 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.17f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/axle1/Documents/projects/Asteroids3
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50759
+Successfully changed project path to: C:/Users/axle1/Documents/projects/Asteroids3
+C:/Users/axle1/Documents/projects/Asteroids3
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 46.06 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.17f1 (a4537701e4ab)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/axle1/Documents/projects/Asteroids3/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f11)
+    Vendor:   
+    VRAM:     5980 MB
+    Driver:   27.21.14.5763
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002626 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 45.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.736 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1736ms)
+		BeginReloadAssembly (79ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (658ms)
+			LoadAssemblies (77ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (247ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (251ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (46ms)
+				BeforeProcessingInitializeOnLoad (21ms)
+				ProcessInitializeOnLoadAttributes (131ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005158 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.753 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1754ms)
+		BeginReloadAssembly (231ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (1423ms)
+			LoadAssemblies (127ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (445ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (617ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (139ms)
+				ProcessInitializeOnLoadAttributes (454ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1397 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 64.9 MB.
+System memory in use after: 65.0 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1830.
+Total: 4.093500 ms (FindLiveObjects: 0.205800 ms CreateObjectMapping: 0.058300 ms MarkObjects: 3.737300 ms  DeleteObjects: 0.090200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Sprites
+  artifactKey: Guid(a285157a05837fa4ab093297be3fd20f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites using Guid(a285157a05837fa4ab093297be3fd20f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b1555193094da72a9ff5bc9107d8937') in 0.014010 seconds 
+  Import took 0.017193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 61.142995 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle
+  artifactKey: Guid(8561b58a008bf0a47a06e3e3bc03f372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle using Guid(8561b58a008bf0a47a06e3e3bc03f372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6224ae30cdefa40a6821b8c89a16376') in 0.020735 seconds 
+  Import took 0.024465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.364894 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/source
+  artifactKey: Guid(f6321cc2363494c47afecc1ce373d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/source using Guid(f6321cc2363494c47afecc1ce373d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e6e9bae0aad8c0fa5c81be5a15e9b1') in 0.015120 seconds 
+  Import took 0.018304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.260054 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.zip
+  artifactKey: Guid(5b53740500a5d6e4aac34ba33179d7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.zip using Guid(5b53740500a5d6e4aac34ba33179d7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62607b65e269b02d7283555f5d50612') in 0.067495 seconds 
+  Import took 0.070582 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000442 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.zip
+  artifactKey: Guid(5b53740500a5d6e4aac34ba33179d7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.zip using Guid(5b53740500a5d6e4aac34ba33179d7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62607b65e269b02d7283555f5d50612') in 0.005818 seconds 
+  Import took 0.009161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.430050 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/textures
+  artifactKey: Guid(8b6199b067ab54743b60ef4e355ec550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/textures using Guid(8b6199b067ab54743b60ef4e355ec550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2926b92bdd238ca8ddc2e11138171bf') in 0.012547 seconds 
+  Import took 0.015723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.898505 seconds.
+  path: Assets/Sprites/Low poly space shuttle.fbx
+  artifactKey: Guid(855777d4468b25f47b4ea8cc75df2c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Low poly space shuttle.fbx using Guid(855777d4468b25f47b4ea8cc75df2c83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e329a9249bfeef8f22f71f65e35d32d') in 0.293990 seconds 
+  Import took 0.297994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 347.915163 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.fbx
+  artifactKey: Guid(de43a2dd33805984380a95317421eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/source/Low poly space shuttle.fbx using Guid(de43a2dd33805984380a95317421eaaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f096a082563a5a797c1529ce4f15c278') in 0.053459 seconds 
+  Import took 0.056811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/source/Shuttle main texture 2.jpg
+  artifactKey: Guid(43af25bea00e1f5489136fa70f1db365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/source/Shuttle main texture 2.jpg using Guid(43af25bea00e1f5489136fa70f1db365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7cb8fd41e62ce17ad86ec543c35a46f') in 0.034938 seconds 
+  Import took 0.038092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.070846 seconds.
+  path: Assets/Sprites/low-poly-space-shuttle/textures/Shuttle main texture 2.jpeg
+  artifactKey: Guid(38b42afd969b9eb42bb3038db9ac05b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low-poly-space-shuttle/textures/Shuttle main texture 2.jpeg using Guid(38b42afd969b9eb42bb3038db9ac05b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a57e4f67b56cd6d94d0895e38a0797fe') in 0.022166 seconds 
+  Import took 0.024400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.038011 seconds.
+  path: Assets/Sprites/low_poly_space_shuttle
+  artifactKey: Guid(b1d169fd15d5cae4ba0be0e194956a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low_poly_space_shuttle using Guid(b1d169fd15d5cae4ba0be0e194956a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76c1e0bbe375bff0adfb9bac8399afe1') in 0.008863 seconds 
+  Import took 0.011600 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.655129 seconds.
+  path: Assets/Sprites/low_poly_space_shuttle/scene.bin
+  artifactKey: Guid(83a41e448943a6e42a7be146b9cf7ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low_poly_space_shuttle/scene.bin using Guid(83a41e448943a6e42a7be146b9cf7ebd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fed5ba5efa4bf60af41a035c66863a1') in 0.011473 seconds 
+  Import took 0.014838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.632898 seconds.
+  path: Assets/Sprites/low_poly_space_shuttle/textures
+  artifactKey: Guid(aff5072486eba144294b49891d7fbe5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low_poly_space_shuttle/textures using Guid(aff5072486eba144294b49891d7fbe5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a00baaec4735d1fa4da0197249b8ab') in 0.002803 seconds 
+  Import took 0.005341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.070814 seconds.
+  path: Assets/Sprites/low_poly_space_shuttle/textures/Material_diffuse.jpeg
+  artifactKey: Guid(60e221b7553680746b406f263f035329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/low_poly_space_shuttle/textures/Material_diffuse.jpeg using Guid(60e221b7553680746b406f263f035329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd65b2993f739534ee262558bb44303cb') in 0.012819 seconds 
+  Import took 0.015029 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
