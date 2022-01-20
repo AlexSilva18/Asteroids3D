@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RandomRotator : MonoBehaviour
-{
+public class RandomRotator : MonoBehaviour{
     [SerializeField]
     private float tumble;
+    private Rigidbody asteroid_body;
+    
 
-    void Start()
-    {
-        GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
+    void Start(){
+    	asteroid_body = GetComponent<Rigidbody>();
+
+        asteroid_body.angularVelocity = Random.insideUnitSphere * tumble;
+        
     }
 }
