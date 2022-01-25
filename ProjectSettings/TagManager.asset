@@ -6,8 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Asteroid
-  - Laser1
-  - Laser2
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - UI
   - Player
   - Laser
-  - 
+  - Fragment
   - 
   - 
   - 

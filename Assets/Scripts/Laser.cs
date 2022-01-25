@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour{
     
-    private float speed = 150.0f;
+    private float speed = 200.0f;
     private float maxLifetime = 10.0f;
     private Rigidbody laser_body;
 
@@ -18,13 +18,16 @@ public class Laser : MonoBehaviour{
 
     public void Project(Vector2 direction){
         laser_body.velocity = transform.forward * speed;
-        this.transform.rotation = this.transform.rotation * Quaternion.Euler (90f, 0f, 0f);
+        this.transform.rotation = this.transform.rotation * Quaternion.Euler (0f, 0f, 0f);
         // transform.rotation = Quaternion.LookRotation(direction) * transform.rotation;
         Destroy(this.gameObject, this.maxLifetime);
     }
 
     private void OnCollisionEnter(Collision collision){
-        Destroy(this.gameObject);
+        if(collision.gameObject.tag == "Asteroid"){
+            Destroy(this.gameObject);
+        }
+        
     }
 
     // Update is called once per frame

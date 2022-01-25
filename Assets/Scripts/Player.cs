@@ -16,8 +16,11 @@ public class Player : MonoBehaviour{
     // private float translation;
     // private float rotation;
 
+    private Vector3 startPoint;
+    private int lives;
+    private bool playerDead = false;
 
-    public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 50f;
+    public float forwardSpeed = 25f, strafeSpeed = 7.5f, hoverSpeed = 100f;
     private float activeForwardSpeed, activeStrafeSpeed, activeHoverSpeed;
     private float forwardAcceleration = 3.5f, strafeAcceleration = 1f, hoverAcceleration = 1f;
 
@@ -31,16 +34,16 @@ public class Player : MonoBehaviour{
 
 
     private bool canMove = true;
+    private bool invul = true;
     private int currentCameraIndex;
     public Camera[] cameras;
     public Transform leftLaser, rightLaser;
 
 
 
-
-
     void Start(){
         player_body = GetComponent<Rigidbody>();
+        startPoint = this.transform.position;
 
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
@@ -55,6 +58,9 @@ public class Player : MonoBehaviour{
         if (cameras.Length>0){
              cameras[0].gameObject.SetActive(true);
          }
+
+        GetComponent<Collider>().material.dynamicFriction = 0;
+        Invoke("DisableInvulnerable", 3);
         // if(seconds >= 3){
         //     Cursor.lockState = CursorLockMode.None;
         // }
@@ -64,8 +70,19 @@ public class Player : MonoBehaviour{
 
     void Update(){
 
-        if(Input.GetKey(KeyCode.R)){
-            canMove = true;
+        if (Input.GetKey(KeyCode.N) && this.lives == 0 && playerDead == true){
+            Restart();
+        }
+        else if (Input.GetKey(KeyCode.Q)){
+            FindObjectOfType<GameManager>().ExitGame();
+        }
+
+        if(Input.GetKey(KeyCode.R) && this.lives > 0 && playerDead == true){
+            Respawn();
+            FindObjectOfType<GameManager>().Respawn();
+        }
+        if(Input.GetKey(KeyCode.G)){
+            FindObjectOfType<AsteroidSpawner>().getNumberAsteroids();
         }
 
         if(canMove == true){
@@ -111,7 +128,7 @@ public class Player : MonoBehaviour{
             transform.position += (transform.right * activeStrafeSpeed * Time.deltaTime) + (transform.forward * activeHoverSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.C)){
+        if (Input.GetKeyDown(KeyCode.C) && playerDead == false){
              currentCameraIndex ++;
 
              if (currentCameraIndex < cameras.Length){
@@ -125,7 +142,7 @@ public class Player : MonoBehaviour{
              }
          }
 
-         if(Input.GetMouseButtonDown(0)){
+         if(Input.GetMouseButtonDown(0) && playerDead == false){
             Shoot();
         }
 
@@ -133,7 +150,7 @@ public class Player : MonoBehaviour{
     }
 
     private void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "Asteroid"){
+        if(collision.gameObject.tag == "Asteroid" && invul == false){
             canMove = false;
 
             // player_body.velocity = Vector3.zero;
@@ -141,17 +158,39 @@ public class Player : MonoBehaviour{
 
             // this.gameObject.SetActive(false);
 
-            // FindObjectOfType<GameManager>().PlayerDied();
-
+            this.lives = FindObjectOfType<GameManager>().PlayerDied();
+            this.playerDead = true;
+            GetComponent<Collider>().material.dynamicFriction = 0;
+            this.invul = true;
+        }
+        else{
+            Respawn();
         }
     }
 
     private void Shoot(){
-        // Laser laser1 = Instantiate(this.laserPrefab1, , transform.rotation);
-        // Laser laser2 = Instantiate(this.laserPrefab2, rightLaser.position, transform.rotation);
         Laser laser1 = Instantiate(this.laserPrefab1, leftLaser.position, transform.rotation);
         Laser laser2 = Instantiate(this.laserPrefab2, rightLaser.position, transform.rotation);
         laser1.Project(this.transform.up);
         laser2.Project(this.transform.up);
+    }
+
+    public void Respawn(){
+        this.canMove = true;
+        this.playerDead = false;
+        player_body.position = Vector2.zero;
+        player_body.velocity = Vector2.zero;
+        transform.position = startPoint;
+        player_body.angularVelocity = Vector3.zero;
+        Invoke("DisableInvulnerable", 3);
+    }
+
+    public void Restart(){
+        Respawn();
+        this.lives = 3;
+        FindObjectOfType<GameManager>().NewGame();
+    }
+    private void DisableInvulnerable(){
+        invul = false;
     }
 }
