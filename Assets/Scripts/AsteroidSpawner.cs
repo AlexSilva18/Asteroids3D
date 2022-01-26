@@ -13,7 +13,7 @@ public class AsteroidSpawner : MonoBehaviour{
     public float startSafeRange;
     public float trajectoryVariance = 15.0f;
     private List<Asteroid> objectsToPlace = new List<Asteroid>();
-    private float amountToSpawn = 10;
+    private float amountToSpawn = 5;
     private int asteroidNumber;
     public Text AsteroidNumberText;
     public Text AsteroidText;
@@ -59,9 +59,17 @@ public class AsteroidSpawner : MonoBehaviour{
         this.asteroidNumber = asteroidsNum;
         this.AsteroidNumberText.text = asteroidNumber.ToString();
         if (this.asteroidNumber == 0){
-            FindObjectOfType<Player>().StageLevelUp();
+            FindObjectOfType<GameManager>().StageLevelUp();
+            ExampleCoroutine();
+            FindObjectOfType<Player>().Respawn();
+            this.amountToSpawn += 5;
+            Init();
             // FindObjectOfType<GameManager>().AsteroidDestroyed(this);
         }
+    }
+
+    private IEnumerator ExampleCoroutine(){
+        yield return new WaitForSeconds(3);
     }
 
     public void addAsteroid(Asteroid[] asteroids){
