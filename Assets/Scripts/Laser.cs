@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour{
     
-    private float speed = 200.0f;
-    private float maxLifetime = 10.0f;
+    public float speed = 200.0f;
+    private float maxLifetime = 5.0f;
     private Rigidbody laser_body;
 
     private void Awake(){
@@ -29,6 +29,15 @@ public class Laser : MonoBehaviour{
         }
         
     }
+
+    public void Supersonic(bool on){
+        if(on){
+            this.speed = 400.0f;
+        }
+        else{
+            this.speed = 200.0f;
+        }
+    } 
 
     // Update is called once per frame
     void Update(){

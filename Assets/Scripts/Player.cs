@@ -38,6 +38,7 @@ public class Player : MonoBehaviour{
     private int currentCameraIndex;
     public Camera[] cameras;
     public Transform leftLaser, rightLaser;
+    private bool supersonic = false;
 
 
 
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour{
          }
 
         GetComponent<Collider>().material.dynamicFriction = 0;
+        Physics.IgnoreLayerCollision(6, 9, true);
         Invoke("DisableInvulnerable", 3);
         // if(seconds >= 3){
         //     Cursor.lockState = CursorLockMode.None;
@@ -83,6 +85,13 @@ public class Player : MonoBehaviour{
         }
         if(Input.GetKey(KeyCode.G)){
             FindObjectOfType<AsteroidSpawner>().getNumberAsteroids();
+        }
+
+        if(Input.GetKey(KeyCode.Space)){
+            Supersonic(true);
+        }
+        else{
+            Supersonic(false);
         }
 
         if(canMove == true){
@@ -150,7 +159,7 @@ public class Player : MonoBehaviour{
     }
 
     private void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.tag == "Asteroid" && invul == false){
+        if(collision.gameObject.tag == "Asteroid"){
             canMove = false;
 
             // player_body.velocity = Vector3.zero;
@@ -160,8 +169,8 @@ public class Player : MonoBehaviour{
 
             this.lives = FindObjectOfType<GameManager>().PlayerDied();
             this.playerDead = true;
-            GetComponent<Collider>().material.dynamicFriction = 0;
-            this.invul = true;
+            // GetComponent<Collider>().material.dynamicFriction = 0;
+            // this.invul = true;
         }
         else{
             Respawn();
@@ -173,6 +182,19 @@ public class Player : MonoBehaviour{
         Laser laser2 = Instantiate(this.laserPrefab2, rightLaser.position, transform.rotation);
         laser1.Project(this.transform.up);
         laser2.Project(this.transform.up);
+        if(supersonic){
+            laser1.speed = 700f;
+            laser2.speed = 700f;
+        }
+        // else{
+        //     laser1.speed = 200f;
+        //     laser2.speed = 200f;
+        // }
+    }
+
+    public void StageComplete(){
+        canMove = false;
+        this.playerDead = true;
     }
 
     public void Respawn(){
@@ -182,15 +204,38 @@ public class Player : MonoBehaviour{
         player_body.velocity = Vector2.zero;
         transform.position = startPoint;
         player_body.angularVelocity = Vector3.zero;
+        Physics.IgnoreLayerCollision(6, 9);
+        // FindObjectOfType<AsteroidSpawner>().disableCollision();
         Invoke("DisableInvulnerable", 3);
     }
 
+    public void Supersonic(bool on){
+        if(on){
+            hoverSpeed = 500f;
+            forwardSpeed = 125f;
+            strafeSpeed = 37.5f;
+            supersonic = true;
+            
+            // FindObjectOfType<Laser>().Supersonic(true);
+        }
+        else{
+            hoverSpeed = 100f;
+            forwardSpeed = 25f;
+            strafeSpeed = 7.5f;
+            supersonic = false;
+            
+            // FindObjectOfType<Laser>().Supersonic(false);
+        }
+    }
+
     public void Restart(){
-        Respawn();
         this.lives = 3;
         FindObjectOfType<GameManager>().NewGame();
+        FindObjectOfType<AsteroidSpawner>().NewGame();
+        Respawn();
     }
     private void DisableInvulnerable(){
-        invul = false;
+        // invul = false;
+        Physics.IgnoreLayerCollision(6, 9, false);
     }
 }

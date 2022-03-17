@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour{
     }
 
     private void GameOver(){
+        // toggleText();
         this.GameOverText.enabled = true;
         this.NewGameText.enabled = true;
     }
@@ -85,6 +86,8 @@ public class GameManager : MonoBehaviour{
     public void NewGame(){
         SetScore(0);
         SetLives(3);
+        this.stageLevel = 1;
+        UpdateStage(this.stageLevel);
         toggleText();
     }
 
@@ -103,6 +106,7 @@ public class GameManager : MonoBehaviour{
         this.StageCompletedText.enabled = true;
         Invoke("DisableStageCompleted", 3);
         UpdateStage(this.stageLevel + 1);
+        toggleText();
     }
 
     private void SetLives(int lives){
@@ -117,7 +121,6 @@ public class GameManager : MonoBehaviour{
         this.StageCompletedText.enabled = false;
     }
 
-    
 
     private void disableStage(){
         this.StageLevelText.enabled = false;

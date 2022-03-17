@@ -16,7 +16,6 @@ public class AsteroidSpawner : MonoBehaviour{
     private float amountToSpawn = 5;
     private int asteroidNumber;
     public Text AsteroidNumberText;
-    public Text AsteroidText;
     
     
     void Start(){
@@ -60,7 +59,9 @@ public class AsteroidSpawner : MonoBehaviour{
         this.AsteroidNumberText.text = asteroidNumber.ToString();
         if (this.asteroidNumber == 0){
             FindObjectOfType<GameManager>().StageLevelUp();
-            ExampleCoroutine();
+            FindObjectOfType<Player>().StageComplete();
+            Wait();
+            Invoke("DisableInvulnerable", 3);
             FindObjectOfType<Player>().Respawn();
             this.amountToSpawn += 5;
             Init();
@@ -68,7 +69,7 @@ public class AsteroidSpawner : MonoBehaviour{
         }
     }
 
-    private IEnumerator ExampleCoroutine(){
+    private IEnumerator Wait(){
         yield return new WaitForSeconds(3);
     }
 
@@ -92,6 +93,28 @@ public class AsteroidSpawner : MonoBehaviour{
     //     UpdateAsteroids()this.asteroidNumber;
     //     Debug.Log("#: " + this.asteroidNumber);
     // }
+
+    // public void disableCollision(){
+    //     for(int i = 0; i < objectsToPlace.Count; i++){
+    //         Asteroid asteroid = objectsToPlace[i];
+
+    //         Physics.IgnoreCollision(asteroid.GetComponent<Collider>(), GetComponent<Collider>());
+    //     }
+        
+    // }
+
+    public void NewGame(){
+        GameObject[] asteroids;
+ 
+        asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+ 
+         foreach(GameObject asteroid in asteroids){
+             Destroy(asteroid);
+         }
+        objectsToPlace.Clear();
+        this.amountToSpawn = 5;
+        Init();
+    }
 
     public int getNumberAsteroids(){
         return this.asteroidNumber;
